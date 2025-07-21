@@ -1,0 +1,23 @@
+* {
+  font-family: "Lexend Deca", sans-serif;
+  font-style: bold;
+  font-weight: 400;
+  text-align: center;
+}
+
+body {
+  background-color: wheat;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+#somber {
+  color: #c50080;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title>Somber</title>
+        <link rel="icon" href="change_here.png" type="image/png">
+        
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{url_for("static", filename="styles.css")}}"
+
+    </head>
+    <body>
+        <h1>Welcome to<div id="somber">Somber</div></h1>
+        <div id="intro">
+            <p>This is a simple chatroom created to circumvent the NY phone ban. Feel free to reach out to suggest new potential updates in the future. Stay connected!</p>
+        </div>
+        <div class="footer">
+            <a href="https://www.instagram.com/ga._cs/" target="_blank">
+                <img src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram Logo">
+                My Instagram
+            </a>
+        </div>
+        </body>
+</html>
