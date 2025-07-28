@@ -9,6 +9,13 @@ body {
   background-color: wheat;
 }
 
+#image {
+  max-width: 3%;
+  height: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 .footer {
   position: fixed;
   bottom: 0;

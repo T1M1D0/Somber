@@ -22,7 +22,7 @@ class MyTask(db.Model):
 
 @app.route("/")
 def index():
-    return render_template("home.html")
+    return render_template("landing.html")
 
 if __name__ in "__main__":
     with app.app_context():
