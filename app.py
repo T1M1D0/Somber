@@ -1,31 +1,19 @@
 from flask import Flask, render_template
 from flask_scss import Scss
-from flask_sqlalchemy import SQLAlchemy
+from flask_socketio import join_room, leave_room, send, SocketIO
 from datetime import datetime
+import random
+from string import ascii_uppercase
 
 #App
 app = Flask(__name__)
+app.config["Secret key"] = "helloworld"
+socketio = SocketIO(app)
 Scss(app)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
-db = SQLAlchemy(app)
-
-#Row of Data
-class MyTask(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    content = db.Column(db.String(100), nullable = False)
-    complete = db.Column(db.Integer, default=0)
-    created = db.Column(db.DateTime, default=datetime.utcnow)
-
-    def __repr__(self)->str:
-        return f"Task {self.id}"
-
-@app.route("/")
-def index():
+@app.route("/", methods=["POST", "GET"])
+def home():
     return render_template("landing.html")
 
-if __name__ in "__main__":
-    with app.app_context():
-        db.create_all()
-
-    app.run(debug=True)
+if __name__ == "__main__":
+    socketio.run(app, debug=True)
