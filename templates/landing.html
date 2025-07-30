@@ -1,36 +1,37 @@
 {% extends 'home.html' %}
 
-{% block head %}
-{% endblock %}
-
-
 {% block body %} 
 <h1>Welcome to<div id="somber">Somber</div></h1>
-        <div id="intro">
+        <div class="intro">
             <p>This is a simple chatroom created to circumvent the NY phone ban. Feel free to reach out to suggest new potential updates in the future. Stay connected!</p>
         </div>
         <div class="footer">
-            <a href="https://www.instagram.com/ga._cs/" target="_blank">
+            <a href="https://www.instagram.com/ga._cs/" target="_blank" class="image">
                 <img src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram Logo" id="image">
             </a>
-            <a href="https://github.com/T1M1D0" target="_blank">
+            <a href="https://github.com/T1M1D0" target="_blank" class="image">
                 <img src="{{ url_for('static', filename='Github.png') }}" alt="GitHub Logo" id="image">
             </a>
         </div>
         <div class="selection">
             <form method="post">
                 <h3>Enter the Room</h3>
-            <div id="name">
+            <div class="name">
                 <label>Name:</label>
                 <input type="text" placeholder="Write your name!" name="name" value="{{name}}"/>
             </div>
-            <div id="join">
+            <div class="join">
                 <input type="text" placeholder="Room Code" name="code" value="{{code}}"/>
                 <button type="submit" name="join">Join a Room</button>
             </div>
-            <div id="create">
+            <div class="create">
                 <button type="submit" name="create">Create a Room</button>
             </div>
+            {% if error %}
+            <ul>
+                <li>{{error}}</li>
+            </ul>
+            {% endif %}
             </form>
         </div>
 {% endblock %}
