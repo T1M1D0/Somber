@@ -21,7 +21,6 @@ def gen_code(length):
             code += random.choice(ascii_uppercase)
         if code not in rooms:
             break
-    
     return code
     
 @app.route("/", methods=["POST", "GET"])
@@ -69,11 +68,11 @@ def message(data):
 
     content = {
         "name": session.get("name"), 
-        "message": data[data]
+        "message": data["data"]
     }
 
     send(content, to=room)
-    room[room]["messages"].append(content)
+    rooms[room]["messages"].append(content)
     print(f"{session.get('name')} said : {data['data']}")
 
 @socketio.on("connect")

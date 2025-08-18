@@ -13,14 +13,14 @@
         <link rel="stylesheet" href="{{url_for('static', filename="styles.css")}}" />
         {% endblock %}
 
-        <script>
-            src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
-            integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8JHYGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
-            crossorigin="anonymous"
+        <script 
+            src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" 
+            integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" 
+            crossorigin="anonymous">
         </script>
     </head>
     <body>
         {% block body %}
         {% endblock %}
-        </body>
+    </body>
 </html>
